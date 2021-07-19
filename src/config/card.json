@@ -1,0 +1,43 @@
+[{
+    "stats": [{
+            "label": "AUM",
+            "value": "₹ 2L",
+            "level": 0
+        },
+        {
+            "label": "GAIN",
+            "unit": "Month",
+            "value": "12.23%",
+            "level": 1
+        },
+        {
+            "label": "INDEX",
+            "unit": "",
+            "value": "1028.75",
+            "level": 1
+        },
+        {
+            "label": "FOLLOWERS",
+            "unit": "",
+            "value": "1028K",
+            "level": 0
+        }
+    ],
+    "amount": {
+        "label": "Minimum follow amount",
+        "unit": "",
+        "value": "₹ 2234.00",
+        "level": 0
+    },
+    "name": "Ranvir Gorai",
+    "autherName": "Kumar Sing",
+    "image": "https://via.placeholder.com/100x100.png",
+    "icon": "https://via.placeholder.com/5x5.png",
+    "tags": [{
+        "label": "Bonds",
+        "type": "secondry"
+    }, {
+        "label": "Equity",
+        "type": "info"
+    }]
+}]
