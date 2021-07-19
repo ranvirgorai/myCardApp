@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Button } from 'react-native';
+import { View, StyleSheet, Image, Text } from 'react-native';
 import theme from '../Utils/Theme';
 import Tag from './Tag';
 export default function Card({ stats, ...props }) {
@@ -29,26 +29,14 @@ export default function Card({ stats, ...props }) {
     }
 
 
-    return <View style={[cardMainWrapper, getCardTypeStyle(props.cardType)]}>
-        <View style={styles.imageNameWrapper}>
-            <Image source={{ uri: props.image }} style={styles.image} />
-            <View style={styles.nameWrapper}>
-                <Text>{props.name}</Text>
-                <View style={styles.autherNameWrapper}>
-                    <Text>by {props.autherName}</Text>
-                    <Image source={{ uri: props.icon}} />             {/*//can use icon */}
-                </View>
-            </View>
-        </View>
+    return <View style={[styles.cardMainWrapper, getCardTypeStyle(props.cardType)]}>
+        <View style={styles.imageNameWrapper}><Image source={{ uri: props.image }} style={styles.image} /><View style={styles.nameWrapper}><Text>{props.name}</Text><View style={styles.autherNameWrapper}><Text>by {props.autherName}</Text><Image source={{ uri: props.icon }} /></View></View></View>
         <View style={styles.tagWrapper}>
             {props.tags?.map((item, index) => {
                 return <Tag type={item.type} label={item.label} key={item.label} />
             })}
         </View>
-        <View style={styles.statsWrapper}>
-            {props.stats.map(item=>Stats(item))}
-      
-        </View>
+        <View style={styles.statsWrapper}>{props.stats?.map(item => Stats(item))}</View>
         <View style={styles.statsWrapper}>
             {Stats(props.amount)}
             <Text style={styles.button}>Watch</Text>
@@ -74,7 +62,8 @@ const styles = StyleSheet.create({
         borderRadius: 4,
         flex: 1,
         borderRightColor: theme.background,
-        borderRightWidth: 2
+        borderRightWidth: 2,
+        margin:10
     },
     image: {
         width: 100,
@@ -112,7 +101,7 @@ const styles = StyleSheet.create({
     onDown: {
         color: theme.secondry
     },
-    button:{
-        color:theme.primery
+    button: {
+        color: theme.primery
     }
 })

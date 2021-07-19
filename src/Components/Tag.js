@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text} from 'react-native';
 import theme from '../Utils/Theme';
 
 export default function Tag(props) {
@@ -29,12 +29,7 @@ export default function Tag(props) {
     }
 
 
-    return <View style={[tagMainWrapper, getTagTypeStyle(props.type)]}>
-
-        <Text style={styles.textStyle}>{props.label}</Text>
-
-
-    </View>
+    return <View style={[styles.tagMainWrapper, getTagTypeStyle(props.type)]}><Text style={styles.textStyle}>{props.label}</Text></View>
 
 }
 
@@ -44,8 +39,8 @@ const styles = StyleSheet.create({
         borderRadius: 4,
         flex: 1,
     },
-    textStyle:{
-        color:"#000000"
+    textStyle: {
+        color: "#000000"
     }
 
 })
