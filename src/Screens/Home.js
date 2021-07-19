@@ -32,7 +32,7 @@
    const isDarkMode = useColorScheme() === 'dark';
  
    const backgroundStyle = {
-     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+     backgroundColor: isDarkMode ? Colors.darker : "#c5c5c5",
    };
  
    return (
@@ -44,7 +44,7 @@
          <Header />
          <View
            style={{
-             backgroundColor: isDarkMode ? Colors.black : Colors.white,
+             backgroundColor: isDarkMode ? Colors.black :  "#efefef",
            }}>
                {cardConfig.map((item,index)=>{
                    return <Card {...item}/>

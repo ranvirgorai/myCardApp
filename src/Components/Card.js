@@ -62,12 +62,13 @@ function Stats(statsData) {
 const styles = StyleSheet.create({
     cardMainWrapper: {
         backgroundColor: theme.background,
-        borderRadius: 4,
+        borderRadius: 5,
         flex: 1,
         borderRightColor: theme.background,
         borderRightWidth: 2,
         margin:10,
-        padding:5
+        marginBottom:5,
+        padding:10
     },
     statsLabel:{
         fontWeight:'bold',
