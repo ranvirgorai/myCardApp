@@ -35,7 +35,9 @@ export default function Card(props) {
             {props.tags?.map((item, index) => {
                 return <Tag type={item.type} label={item.label} key={item.label} />
             })}
-        </View></View></View>
+        </View>
+        </View>
+        </View>
     
         <View style={styles.statsWrapper}>{props.stats?.map(item => Stats(item))}</View>
         <View style={styles.statsWrapper}>
@@ -49,7 +51,7 @@ export default function Card(props) {
 
 function Stats(statsData) {
     return <View style={styles.stats}>
-        <Text>{statsData.label}</Text>
+        <Text style={styles.statsLabel}>{statsData.label}</Text>
         <View style={styles.statsValueWrapper}>
             {statsData.level !== 0 ? statsData.level === 1 ? <Text style={styles.onUp}>^</Text> : <Text style={[styles.onUp, { transform: { rotate: 90 } }]}>^</Text> : null}
             <Text style={statsData.level !== 0 ? statsData.level === 1 ? styles.onUp : styles.onDown : {}}> {statsData.value}</Text>
@@ -67,11 +69,19 @@ const styles = StyleSheet.create({
         margin:10,
         padding:5
     },
+    statsLabel:{
+        fontWeight:'bold',
+        color:"#c9c9c9"
+    },
+    statsSubLabel:{
+
+    },
     image: {
         width: 100,
         height: 100,
         marginRight:10,
-        marginBottom:10
+        marginBottom:10,
+        borderRadius:5
     },
     imageNameWrapper: {
         flex: 1,
