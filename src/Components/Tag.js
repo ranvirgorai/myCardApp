@@ -7,7 +7,7 @@ export default function Tag(props) {
     function getTagTypeStyle(type) {
 
         let cardTypeStyle = {
-            backgroundColor: theme.background,
+            backgroundColor: theme.danger,
         }
 
         if (type === 'primery') {
@@ -35,12 +35,15 @@ export default function Tag(props) {
 
 const styles = StyleSheet.create({
     tagMainWrapper: {
-        backgroundColor: theme.background,
+        backgroundColor: theme.danger,
         borderRadius: 4,
-        flex: 1,
+        paddingHorizontal:4,
+        paddingVertical:2,
+        marginRight:5,
+        marginTop:5
     },
     textStyle: {
-        color: "#000000"
+        color: "#ffffff"
     }
 
 })

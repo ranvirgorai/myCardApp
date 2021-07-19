@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Image, Text } from 'react-native';
 import theme from '../Utils/Theme';
 import Tag from './Tag';
-export default function Card({ stats, ...props }) {
+export default function Card(props) {
 
     function getCardTypeStyle(type) {
 
@@ -30,12 +30,13 @@ export default function Card({ stats, ...props }) {
 
 
     return <View style={[styles.cardMainWrapper, getCardTypeStyle(props.cardType)]}>
-        <View style={styles.imageNameWrapper}><Image source={{ uri: props.image }} style={styles.image} /><View style={styles.nameWrapper}><Text>{props.name}</Text><View style={styles.autherNameWrapper}><Text>by {props.autherName}</Text><Image source={{ uri: props.icon }} /></View></View></View>
+        <View style={styles.imageNameWrapper}><Image source={{ uri: props.image }} style={styles.image} /><View style={styles.nameWrapper}><Text>{props.name}</Text><View style={styles.autherNameWrapper}><Text>by {props.autherName}</Text><Image source={{ uri: props.icon }} /></View>
         <View style={styles.tagWrapper}>
             {props.tags?.map((item, index) => {
                 return <Tag type={item.type} label={item.label} key={item.label} />
             })}
-        </View>
+        </View></View></View>
+    
         <View style={styles.statsWrapper}>{props.stats?.map(item => Stats(item))}</View>
         <View style={styles.statsWrapper}>
             {Stats(props.amount)}
@@ -63,11 +64,14 @@ const styles = StyleSheet.create({
         flex: 1,
         borderRightColor: theme.background,
         borderRightWidth: 2,
-        margin:10
+        margin:10,
+        padding:5
     },
     image: {
         width: 100,
         height: 100,
+        marginRight:10,
+        marginBottom:10
     },
     imageNameWrapper: {
         flex: 1,
@@ -83,16 +87,19 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     tagWrapper: {
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     statsWrapper: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        justifyContent:"space-between",
+        marginVertical:5
     },
     stats: {
-        flexDirection: 'column'
+        flexDirection: 'column',
+        alignItems:"center"
     },
     statsValueWrapper: {
-        flexDirection: 'column'
+        flexDirection: 'row'
     },
     onUp: {
         color: theme.primery,
@@ -102,6 +109,7 @@ const styles = StyleSheet.create({
         color: theme.secondry
     },
     button: {
-        color: theme.primery
+        color: theme.info,
+        fontSize:20
     }
 })
